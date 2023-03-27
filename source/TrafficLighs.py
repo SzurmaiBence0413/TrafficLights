@@ -113,3 +113,7 @@ try:
 except KeyboardInterrupt:
     print("Pinek lekapcsolva")
     GPIO.cleanup()
+
+    
+
+    
