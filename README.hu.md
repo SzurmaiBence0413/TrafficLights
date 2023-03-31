@@ -11,10 +11,33 @@
 2. Az algoritmus tanulmányozása és megértése.
 ***
 3. Az alap paraméter elkészítése.
-***
-4. Az algoritmus megvalósítása.
+    - Az alap paraméterek:
+        - T = 1.0
+        - k = 5
+        - TvalosIdo = T/k
+        - Frequency 3
+        - fill = 50
 
+    - Lámpa idők, melyek kiteszik a tOsszido-t.
+        - tOsszido = tPiros + tPirosSarga + tZold + tSarga
+            - tPiros = 10
+            - tPirosSarga = 3
+            - tZold = 10
+            - tSarga = 3
+4. Az algoritmus megvalósítása.
+    - Létrehoztunk egy végtelen ciklust.
+        - Az első if elágazásban, összehasonlítottuk a t-t az tOsszido-vel, hogyha azonos a t változó a tOsszido-vel akkor a t-t lenulázzuk.
+        - Következő elágazásban, ha t egyenlő volt 0-val:
+            - Akkor a JarmuLampa piroson, még a GyalogLampa zölden világított.
+                - JarmuLampa: Piros (True,False,False)
+                - GyalogLampa: Zöld (False,True)
+        - A harmadik elágazásban, ha t egyenlő tPiros-sal akkor:
+            - JarmuLampa : piros-sárgán világít, míg a GyalogLampa : zold-en villog.
+                - JarmuLampa: Piros-Sarga (True, True, False).
+            - Elértünk a p változóhoz
 5. Tesztelés.
+
+# 1. A teszt 
 
 Megvalósítás:
 ```py
