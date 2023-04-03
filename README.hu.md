@@ -37,6 +37,10 @@
             - Elértünk a p változóhoz
 5. Tesztelés.
 
+
+
+
+
 # 1. A teszt 
 
 Megvalósítás:
@@ -159,4 +163,40 @@ except KeyboardInterrupt:
 
 
 ```
-
+# A program működése
+    1-6. sorig inizaliáljuk a programot
+    9-13. sorig kiosztjuk a pineket táblázat alapján
+    a változókat beleraktuk a pinek tömbjébe
+    - 19. sortól a 20. sorig pinek kimenetnek definiálása
+        -forciklusal definiáltuk a pinek kimenetként
+## Függvények létrehozása:
+     -létrehoztuk a JarmuLampa függvényt aminek a paraméterei a pinek szinei(piros, sárga, zöld)
+     -létrehoztuk a GyalogLampa függvényt aminek a paraméterei a pinek szinei(piros, zöld)
+## Teszt függvény:
+     -létrehoztuk az onOff változót amibe beleraktuk True-t
+     -létrehoztuk egy forciklust aminek segítségével n-szer fel-le kapcsoljuk a ledeket, majd lekapcsolja a ledeket
+## A progrsm paraméterei:
+    - a T változó az idő ,ami 1
+     - a k változó  a gyorsításí faktor ,ami 5
+     - a TvalosIdo a változo ,ami a T és a k hányadosa
+     - a frequency a frekvencia ,ami 3
+     - a fill kitöltés ,ami 50
+## A gyalogos zöld villogási frekvenciája:
+     - az f változó ami valósidő és a T kétsueresének a hányadosa
+## A lámpák égési ideje:
+     - tpiros és a tZold 10 másodpercig még a tSargaPiros és tSarga 3 másodpercig ég
+## Összidö:
+     -Létrehoztuk a tOssziod változót ami a tPiros, tPirosSarga, tZold, tSarga összege
+## A program indulási pontja:
+     - étre hoztunk egy try-t ami ismétli az algoritmust
+         - a try-ba meghívtuk a test függvényt aminek paraméterként odaadtunk 10-t vagys 10-szer ismétli meg test függvényünket
+## Az algoritmus elkezdése:
+    - létrehoztunk ehy While ciklust amine egy True-t adtunk oda 
+        -megvizsgáltuk az tOsszido-t , ha eléri az összidőt akkor újra indul a ciklus
+        - a cikluson belül meghívtuk a JarmuLampa és a GyalogLampa függényeket
+        - az hogy melyik lámpa égjen a True és a False paraméterektöl függ pl:a jármű lámpa piros akkor az  JarmuLampa(True,False,False) még a gyalogos lámpa zöld  GyalogLampa(False,True)
+        - a ciklus végén valós órajel ideig várakozunk 
+## Az egész lezárása:
+    except KeyboardInterrupt:
+    print("Pinek lekapcsolva")
+    GPIO.cleanup()
