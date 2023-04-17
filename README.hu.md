@@ -27,15 +27,35 @@
 4. Az algoritmus megvalósítása.
     - Létrehoztunk egy végtelen ciklust.
         - Az első if elágazásban, összehasonlítottuk a t-t az tOsszido-vel, hogyha azonos a t változó a tOsszido-vel akkor a t-t lenulázzuk.
+
         - Következő elágazásban, ha t egyenlő volt 0-val:
             - Akkor a JarmuLampa piroson, még a GyalogLampa zölden világított.
                 - JarmuLampa: Piros (True,False,False)
                 - GyalogLampa: Zöld (False,True)
+
         - A harmadik elágazásban, ha t egyenlő tPiros-sal akkor:
             - JarmuLampa : piros-sárgán világít, míg a GyalogLampa : zold-en villog.
                 - JarmuLampa: Piros-Sarga (True, True, False).
             - Elértünk a p változóhoz
-5. Tesztelés.
+                - Beállítjuk a PWM ben a GyalogZold lampa villogását, a frekvencia segítségével.
+                - A ChangeDutyCicle segítségével, villogtatjuk a fill (kitöltés) segítségével.
+                - Végén elindítjuk a villogtatást.
+
+        - A negyedik elágazásban, ha t egyenlő pPiros + tPirosSarga-val akkor:
+            - JarmuLampa: Zöld(False, False, True) 
+            - GyalogLampa: Piros(True, False)
+        
+        - Az utolsó elágazásban, ha t egyenlő pPiros + tPirosSarga + tZold-el akkor:
+            - JarmuLampa: Sarga(False, True, False)
+            - GyalogLampa: Piros (True, False)
+
+    - A cilus végén a t változót megnöveljük 1-el, majd a valós órajel ideig várakozunk 
+        - time.sleep(TvalosIdo)
+    
+5. Kikapcsolás.
+    - A keyboardInterrupt parancsot használva, leállítjuk a folyamatot, melyet az alábbi üzenet követ : Pinek lekapcsolva.
+    - Végén üresbe állítjuk a GPIO portokat.
+6. Tesztelés.
 
 
 
